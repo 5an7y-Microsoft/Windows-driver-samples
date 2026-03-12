@@ -40,7 +40,7 @@ jobs:
         run: nuget restore .\packages.config -PackagesDirectory .\packages\
 
       - name: Build the driver
-        run: .\Build-Sample.ps1 -Directory ${{ inputs.driver_to_build }} -Configuration ${{ inputs.configuration }} -Platform ${{ inputs.configuration }} -InfVerif_AdditionalOptions /samples
+        run: .\Build-SampleSet.ps1 -SampleSet ${{ inputs.driver_to_build }} -Configuration ${{ inputs.configuration }} -Platform ${{ inputs.configuration }}
 
       - name: Build the driver
         run: Get-ChildItem -Recurse
